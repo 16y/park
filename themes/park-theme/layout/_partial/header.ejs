@@ -1,17 +1,17 @@
-<header class="header">
+<header class="nav-header">
   <div class="container">
-    <a href="/" class="logo">
+    <a href="/" class="nav-logo">
       <span class="logo-icon">✦</span>
-      <span class="logo-text"><%= config.title %></span>
+      <span class="logo-text"><%= theme.company.name %></span>
     </a>
 
-    <nav class="nav" id="navbar">
+    <nav class="nav-links" id="navLinks">
       <% for (var path in theme.menu) { %>
         <a href="<%= theme.menu[path] %>" class="nav-link"><%= path %></a>
       <% } %>
     </nav>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+    <button class="hamburger" id="menuToggle" aria-label="Toggle menu">
       <span></span>
       <span></span>
       <span></span>

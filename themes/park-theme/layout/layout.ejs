@@ -3,25 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= page.title ? page.title + ' | ' : '' %><%= config.title %></title>
-  <meta name="description" content="<%= config.description %>">
-  <meta name="keywords" content="<%= config.keywords %>">
+  <title><%= page.title ? page.title + ' | ' : '' %><%= theme.company.name %></title>
+  <meta name="description" content="西藏智盈通信息工程有限公司成立于2025年，位于日喀则市桑珠孜区。主营智慧停车场建设、安防监控系统、信息系统集成、智能控制系统集成。西藏本土科技企业，专业团队为您提供一站式智能化解决方案。">
+  <meta name="keywords" content="西藏智盈通,智盈通信息工程,日喀则停车,西藏安防监控,智慧停车场,智能停车,西藏信息系统集成,西藏监控安装,桑珠孜区,日喀则弱电工程,park.cab">
+  <meta name="author" content="西藏智盈通信息工程有限公司">
+  <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="<%= page.title ? page.title + ' | ' : '' %><%= config.title %>">
-  <meta property="og:description" content="<%= config.description %>">
+  <meta property="og:title" content="<%= page.title ? page.title + ' | ' : '' %><%= theme.company.name %>">
+  <meta property="og:description" content="智慧停车场建设、安防监控系统、信息系统集成 — 西藏本土科技企业">
   <meta property="og:type" content="website">
   <meta property="og:url" content="<%= config.url %>">
+  <meta property="og:locale" content="zh_CN">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="<%= config.url %>">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "<%= theme.company.name %>",
+    "description": "智慧停车场建设、安防监控系统、信息系统集成",
+    "foundingDate": "2025-11-11",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "下科技路吉培社区查嘎热林22号",
+      "addressLocality": "日喀则市",
+      "addressRegion": "西藏自治区",
+      "addressCountry": "CN"
+    },
+    "telephone": "<%= theme.company.phone %>",
+    "areaServed": ["西藏自���区", "日喀则市"],
+    "url": "<%= config.url %>"
+  }
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+  <!-- 动态渐变背景层 -->
+  <div class="bg-canvas"></div>
+
+  <!-- 彩色漂浮粒子层 -->
+  <div class="particles">
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+  </div>
+
   <%- partial('_partial/header') %>
 
   <main class="main">

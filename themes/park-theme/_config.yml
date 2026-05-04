@@ -1,42 +1,64 @@
-# park-theme configuration
+# park-theme configuration — 西藏智盈通信息工程有限公司
 
 # Header
 menu:
   首页: /
+  智慧停车: /parking/
+  安防监控: /security/
+  核心服务: /services/
   关于我们: /about/
-  服务: /services/
   联系我们: /contact/
 
 # Footer
 footer:
-  since: 2024
+  company: 西藏智盈通信息工程有限公司
+  since: 2025
   icp: ""  # 备案号
+  address: 西藏自治区日喀则市桑珠孜区下科技路吉培社区查嘎热林22号
+  phone: 166-8902-5173
 
-# Hero Banner
+# Hero Banner Slideshow
 hero:
-  title: "park.cab"
-  subtitle: "专业云服务 · 稳定可靠"
-  button_text: "了解更多"
-  button_link: /about/
-  background: "#0f0f1a"  # 深色渐变背景色
+  slides:
+    - title: "智慧停车 · 安全监控"
+      subtitle: "科技守护每一天"
+      description: "西藏智盈通信息工程有限公司 — 立足日喀则，用智能科技为城市停车与安防赋能"
+      button_text: "✦ 了解服务"
+      button_link: /services/
+    - title: "专业停车场建设"
+      subtitle: "车牌识别 · 无感支付 · 云端管理"
+      description: "覆盖住宅小区、商业综合体、医院、写字楼等各类场景"
+      button_text: "了解智慧停车"
+      button_link: /parking/
+    - title: "安防监控系统"
+      subtitle: "高清监控 · AI智能分析 · 远程查看"
+      description: "高清数字监控、夜视全彩、远程实时查看，全方位守护安全"
+      button_text: "了解安防监控"
+      button_link: /security/
 
 # Features section
 features:
   title: "我们的优势"
   items:
     - icon: "⚡"
-      title: "高速稳定"
-      desc: "全球节点部署，极速响应"
+      title: "技术领先"
+      desc: "掌握智慧停车、AI安防等前沿技术，持续迭代升级"
     - icon: "🔒"
-      title: "安全可靠"
-      desc: "企业级安全防护，数据加密"
-    - icon: "🛠"
-      title: "技术支持"
-      desc: "7×24小时专业技术支持"
+      title: "专业可靠"
+      desc: "精选优质设备，严格施工标准，完善的售后服务体系"
+    - icon: "📍"
+      title: "本土扎根"
+      desc: "深耕日喀则、服务全西藏，了解本地需求"
 
 # Company info
 company:
-  name: park.cab
+  name: 西藏智盈通信息工程有限公司
+  full_name: 西藏智盈通信息工程有限公司
+  founding_date: 2025年11月11日
+  address: 西藏自治区日喀则市桑珠孜区下科技路吉培社区查嘎热林22号
+  phone: "16689025173"
+  phone_display: "166-8902-5173"
+  url: park.cab
   email: ""
-  phone: ""
-  address: ""
+  wechat_qr: /images/wechat-qr.jpg
+  logo: /images/logo.jpg
