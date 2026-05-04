@@ -1,0 +1,37 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-icon">✦</span>
+          <span class="logo-text"><%= config.title %></span>
+        </div>
+        <p class="footer-desc"><%= config.description %></p>
+      </div>
+
+      <div class="footer-links">
+        <h4>快速链接</h4>
+        <% for (var path in theme.menu) { %>
+          <a href="<%= theme.menu[path] %>"><%= path %></a>
+        <% } %>
+      </div>
+
+      <div class="footer-contact">
+        <h4>联系方式</h4>
+        <% if (theme.company.email) { %>
+          <p>邮箱：<%= theme.company.email %></p>
+        <% } %>
+        <% if (theme.company.phone) { %>
+          <p>电话：<%= theme.company.phone %></p>
+        <% } %>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <%= theme.footer.since %> - <%= new Date().getFullYear() %> <%= theme.company.name %>. All rights reserved.</span>
+      <% if (theme.footer.icp) { %>
+        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener"><%= theme.footer.icp %></a>
+      <% } %>
+    </div>
+  </div>
+</footer>

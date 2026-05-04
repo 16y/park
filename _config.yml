@@ -1,19 +1,16 @@
 # Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+title: park.cab
+subtitle: '专业云服务 · 稳定可靠'
+description: 'park.cab - 专业云服务提供商，为您提供高速稳定的网络服务'
+keywords: [park.cab, 云服务, 云计算, 网络服务]
+author: park.cab
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
-## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://www.park.cab
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -96,7 +93,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: park-theme
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

@@ -1,0 +1,42 @@
+# park-theme configuration
+
+# Header
+menu:
+  首页: /
+  关于我们: /about/
+  服务: /services/
+  联系我们: /contact/
+
+# Footer
+footer:
+  since: 2024
+  icp: ""  # 备案号
+
+# Hero Banner
+hero:
+  title: "park.cab"
+  subtitle: "专业云服务 · 稳定可靠"
+  button_text: "了解更多"
+  button_link: /about/
+  background: "#0f0f1a"  # 深色渐变背景色
+
+# Features section
+features:
+  title: "我们的优势"
+  items:
+    - icon: "⚡"
+      title: "高速稳定"
+      desc: "全球节点部署，极速响应"
+    - icon: "🔒"
+      title: "安全可靠"
+      desc: "企业级安全防护，数据加密"
+    - icon: "🛠"
+      title: "技术支持"
+      desc: "7×24小时专业技术支持"
+
+# Company info
+company:
+  name: park.cab
+  email: ""
+  phone: ""
+  address: ""

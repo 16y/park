@@ -1,0 +1,28 @@
+---
+layout: layout
+---
+
+<section class="archive-section section">
+  <div class="container">
+    <h1 class="page-title"><%= page.title %></h1>
+    <div class="archive-list">
+      <% page.posts.each(function(post) { %>
+        <div class="archive-item">
+          <time class="archive-date"><%= date(post.date, 'YYYY-MM-DD') %></time>
+          <a href="<%= url_for(post.path) %>" class="archive-link"><%= post.title %></a>
+        </div>
+      <% }); %>
+    </div>
+
+    <% if (page.posts.total > 1) { %>
+      <nav class="pagination">
+        <% if (page.prev) { %>
+          <a href="<%= url_for(page.prev_link) %>" class="btn btn-outline">← 上一页</a>
+        <% } %>
+        <% if (page.next) { %>
+          <a href="<%= url_for(page.next_link) %>" class="btn btn-outline">下一页 →</a>
+        <% } %>
+      </nav>
+    <% } %>
+  </div>
+</section>

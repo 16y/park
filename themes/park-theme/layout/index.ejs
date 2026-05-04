@@ -1,0 +1,52 @@
+---
+layout: layout
+---
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title"><%= theme.hero.title %></h1>
+      <p class="hero-subtitle"><%= theme.hero.subtitle %></p>
+      <% if (theme.hero.button_text) { %>
+        <a href="<%= theme.hero.button_link %>" class="btn btn-primary"><%= theme.hero.button_text %></a>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<section class="features section">
+  <div class="container">
+    <h2 class="section-title"><%= theme.features.title %></h2>
+    <div class="features-grid">
+      <% if (theme.features && theme.features.items) { %>
+        <% theme.features.items.forEach(function(item) { %>
+          <div class="feature-card">
+            <div class="feature-icon"><%= item.icon %></div>
+            <h3><%= item.title %></h3>
+            <p><%= item.desc %></p>
+          </div>
+        <% }); %>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<section class="latest-posts section section-alt">
+  <div class="container">
+    <h2 class="section-title">最新动态</h2>
+    <div class="posts-grid">
+      <% if (page.posts && page.posts.length) { %>
+        <% page.posts.each(function(post) { %>
+          <article class="post-card">
+            <div class="post-date"><%= date(post.date, 'YYYY-MM-DD') %></div>
+            <h3 class="post-title"><a href="<%= url_for(post.path) %>"><%= post.title %></a></h3>
+            <p class="post-excerpt"><%= post.excerpt ? strip_html(post.excerpt) : '' %></p>
+          </article>
+        <% }); %>
+      <% } else { %>
+        <p class="no-posts">暂无动态</p>
+      <% } %>
+    </div>
+  </div>
+</section>
