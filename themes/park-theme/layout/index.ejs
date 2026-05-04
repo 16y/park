@@ -32,21 +32,15 @@ layout: layout
   </div>
 </section>
 
-<section class="latest-posts section section-alt">
+<section class="section section-alt">
   <div class="container">
-    <h2 class="section-title">最新动态</h2>
-    <div class="posts-grid">
-      <% if (page.posts && page.posts.length) { %>
-        <% page.posts.each(function(post) { %>
-          <article class="post-card">
-            <div class="post-date"><%= date(post.date, 'YYYY-MM-DD') %></div>
-            <h3 class="post-title"><a href="<%= url_for(post.path) %>"><%= post.title %></a></h3>
-            <p class="post-excerpt"><%= post.excerpt ? strip_html(post.excerpt) : '' %></p>
-          </article>
-        <% }); %>
-      <% } else { %>
-        <p class="no-posts">暂无动态</p>
-      <% } %>
+    <h2 class="section-title">关于我们</h2>
+    <div class="about-preview">
+      <p>park.cab 专注于提供专业、稳定的云服务解决方案。</p>
+      <p>凭借全球多节点部署和先进的路由技术，我们致力于为每一位用户提供高速、安全的网络体验。</p>
+      <div class="about-cta">
+        <a href="/about/" class="btn btn-outline">了解更多 →</a>
+      </div>
     </div>
   </div>
 </section>

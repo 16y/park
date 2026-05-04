@@ -392,44 +392,6 @@ img {
 }
 
 /* ==============================
-   ARCHIVE
-   ============================== */
-.archive-section {
-  padding-top: 120px;
-}
-.archive-list {
-  max-width: 700px;
-  margin: 0 auto;
-}
-.archive-item {
-  display: flex;
-  align-items: baseline;
-  gap: 20px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--border);
-}
-.archive-date {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  white-space: nowrap;
-  min-width: 100px;
-}
-.archive-link {
-  font-size: 1.05rem;
-  color: var(--text-primary);
-  font-weight: 500;
-}
-.archive-link:hover {
-  color: var(--primary-light);
-}
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 40px;
-}
-
-/* ==============================
    FOOTER
    ============================== */
 .footer {
@@ -549,4 +511,22 @@ img {
     flex-direction: column;
     gap: 4px;
   }
+}
+
+/* ==============================
+   ABOUT PREVIEW (homepage section)
+   ============================== */
+.about-preview {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about-preview p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+.about-cta {
+  margin-top: 30px;
 }
