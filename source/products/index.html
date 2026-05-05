@@ -1,554 +1,494 @@
----
-layout: page
-title: 产品展示
----
-
-<style>
-/* ===== 产品展示页样式 ===== */
-.page-banner {
-    position: relative;
-    height: 50vh;
-    min-height: 320px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-    background: linear-gradient(135deg, #0a0a1a 0%, #1a3a2a 100%);
-    margin: -60px -20px 0;
-}
-.page-banner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.7) 100%),
-        url('/images/slide-parking.jpg') center/cover no-repeat;
-    z-index: 0;
-}
-.page-banner-content {
-    position: relative;
-    z-index: 1;
-    padding: 120px 20px 60px;
-}
-.page-banner h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    margin: 0 0 12px;
-    color: #fff;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.5);
-    font-weight: 800;
-}
-.page-banner h1 .highlight { color: var(--accent, #00e5ff); }
-.page-banner p {
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.7);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.products-page { padding: 60px 0 80px; }
-
-/* ===== 分类标题 ===== */
-.cat-section { margin-bottom: 50px; }
-.cat-section:last-child { margin-bottom: 0; }
-.cat-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 24px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.cat-header .cat-icon { font-size: 1.8rem; }
-.cat-header h2 { font-size: 1.4rem; margin: 0; }
-.cat-header h2 .highlight { color: var(--accent, #00e5ff); }
-.cat-header .cat-count {
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.35);
-    margin-left: auto;
-}
-
-/* ===== 产品卡片网格 ===== */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-.product-card {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.3s;
-    display: flex;
-    flex-direction: column;
-}
-.product-card:hover {
-    border-color: rgba(0,229,255,0.15);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.3);
-}
-.product-card .pc-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    background: linear-gradient(135deg, #1a1a3a, #0a3a2a);
-}
-.product-card .pc-body {
-    padding: 18px 20px;
-    flex: 1;
-}
-.product-card .pc-name {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #fff;
-    margin: 0 0 2px;
-}
-.product-card .pc-name .highlight { color: var(--accent, #00e5ff); }
-.product-card .pc-model {
-    font-family: monospace;
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.35);
-    margin: 0 0 10px;
-}
-.product-card .pc-specs {
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.55);
-    line-height: 1.7;
-    margin: 0;
-}
-.product-card .pc-specs span { color: rgba(255,255,255,0.3); }
-.product-card .pc-footer {
-    padding: 12px 20px;
-    border-top: 1px solid rgba(255,255,255,0.04);
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.4);
-    line-height: 1.6;
-    background: rgba(0,0,0,0.15);
-}
-
-@media (max-width: 700px) {
-    .product-grid { grid-template-columns: 1fr; }
-}
-</style>
-
-<div class="page-banner">
-    <div class="page-banner-content">
-        <h1>产品 <span class="highlight">展示</span></h1>
-        <p>智慧停车全系列设备 · 车牌识别 · 道闸 · 机器人 · ETC · 呼叫收费</p>
-    </div>
-</div>
-
-<div class="products-page">
-<div class="container">
-
-<!-- ===== 智慧停车产品 ===== -->
-<div class="cat-section">
-<div class="cat-header">
-    <div class="cat-icon">🅿️</div>
-    <h2>智慧停车 <span class="highlight">产品清单</span></h2>
-    <span class="cat-count">共 23 款产品</span>
-</div>
-<div class="product-grid">
-
-<!-- 1. 智尊款车牌识别一体机（LED款） -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/zhi-zun-led.png" alt="智尊款车牌识别一体机" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">智尊款</span> 车牌识别一体机（LED款）</div>
-        <div class="pc-model">TD-PA-XP711</div>
-        <div class="pc-specs">
-            箱体4*4汉字一套 · <span>500万摄像机</span><br>
-            显示屏 · 喇叭 · 语音 · 15W LED补光灯<br>
-            通讯：RS485/TCPIP
-        </div>
-    </div>
-    <div class="pc-footer">
-        显示4*4汉字 Ø3.75 上红下绿 · AC220V<br>
-        温度-15℃~+85℃ · 尺寸1400*340*300mm
-    </div>
-</div>
-
-<!-- 2. 小元1号 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/xiao-yuan-1.png" alt="小元1号" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">小元1号</span></div>
-        <div class="pc-model">TD-PA-XY702</div>
-        <div class="pc-specs">
-            箱体2*4汉字一套 · <span>500万摄像机</span><br>
-            15W补光灯 · 语音功能<br>
-            通讯：RS485/TCPIP
-        </div>
-    </div>
-    <div class="pc-footer">
-        显示304*152mm · 立柱1350*145*230mm<br>
-        温度-15℃~+85℃ · AC220V
-    </div>
-</div>
-
-<!-- 3. 小元2号 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/xiao-yuan-2.png" alt="小元2号" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">小元2号</span></div>
-        <div class="pc-model">TD-PA-XY706</div>
-        <div class="pc-specs">
-            箱体2*4汉字一套 · <span>500万摄像机</span><br>
-            15W补光灯 · 语音功能<br>
-            通讯：RS485/TCPIP
-        </div>
-    </div>
-    <div class="pc-footer">
-        显示304*152mm · 立柱1350*145*230mm<br>
-        温度-15℃~+85℃ · AC220V
-    </div>
-</div>
-
-<!-- 4. 小智一号 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/xiao-zhi-1.png" alt="小智一号" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">小智一号</span></div>
-        <div class="pc-model">TD-PA-XP703</div>
-        <div class="pc-specs">
-            箱体2*4汉字一套 · <span>500万摄像机</span><br>
-            15W补光灯 · 喇叭 · 语音<br>
-            通讯：RS485/TCPIP
-        </div>
-    </div>
-    <div class="pc-footer">
-        显示304*152mm · 立柱1350*145*230mm<br>
-        温度-15℃~+85℃ · AC220V
-    </div>
-</div>
-
-<!-- 5. 新版智信款四行显示车牌识别 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/zhi-xin-lcd.png" alt="新版智信款车牌识别" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">新版智信款</span> 四行显示车牌识别</div>
-        <div class="pc-model">TD-PA-XP710</div>
-        <div class="pc-specs">
-            10.1寸LCD高亮液晶显示屏 · <span>500万摄像机</span><br>
-            15W补光灯 · 语音功能<br>
-            通讯：RS485/TCPIP
-        </div>
-    </div>
-    <div class="pc-footer">
-        显示304*152mm · 立柱1350*145*230mm<br>
-        温度-15℃~+85℃ · AC220V
-    </div>
-</div>
-
-<!-- 6. 智尊款系列（LCD款） -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/zhi-zun-lcd.png" alt="智尊款LCD款" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">智尊款系列</span>（LCD款）</div>
-        <div class="pc-model">ZZ712</div>
-        <div class="pc-specs">
-            18.5寸高清液晶显示屏 · <span>嵌入式LINUX驱动</span><br>
-            1000nt高亮度 · 500万摄像机<br>
-            通讯：TCPIP
-        </div>
-    </div>
-    <div class="pc-footer">
-        尺寸1400*340*300mm · AC220V<br>
-        温度-15℃~+85℃ · 道闸/车牌识别配套方案
-    </div>
-</div>
-
-<!-- 7. 星光系列 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/xing-guang.png" alt="星光系列" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">星光系列</span></div>
-        <div class="pc-model">XG202</div>
-        <div class="pc-specs">
-            箱体2*4汉字一套 · <span>含立柱</span><br>
-            500万摄像机 · 三色显示 · 15W补光灯<br>
-            通讯：RS485/TCPIP
-        </div>
-    </div>
-    <div class="pc-footer">
-        显示155*580/304*304mm · 立柱H1650mm<br>
-        温度-15℃~+85℃ · AC220V
-    </div>
-</div>
-
-<!-- 8. 星眸系列 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/xing-mou.webp" alt="星眸系列" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">星眸系列</span></div>
-        <div class="pc-model">XM702</div>
-        <div class="pc-specs">
-            箱体4*4汉字一套 · <span>500万摄像机</span><br>
-            三色显示 · 15W补光灯<br>
-            通讯：RS485/TCPIP
-        </div>
-    </div>
-    <div class="pc-footer">
-        显示304*304mm · 方柱H1550mm<br>
-        温度-15℃~+85℃ · AC220V
-    </div>
-</div>
-
-<!-- 9. 超眸系列 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/chao-mou.png" alt="超眸系列" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">超眸系列</span></div>
-        <div class="pc-model">CM602</div>
-        <div class="pc-specs">
-            箱体4*4汉字一套 · <span>500万摄像机</span><br>
-            三色显示 · 15W补光灯<br>
-            通讯：RS485/TCPIP
-        </div>
-    </div>
-    <div class="pc-footer">
-        显示304*304mm · 方柱H1550mm<br>
-        温度-15℃~+85℃ · AC220V
-    </div>
-</div>
-
-<!-- 10. 车场ETC天线 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/etc-tian-xian.webp" alt="车场ETC天线" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">车场ETC天线</span></div>
-        <div class="pc-model">TD-PA-TX102</div>
-        <div class="pc-specs">
-            电压12-24V DC · <span>四核1.4G ARM处理器</span><br>
-            防护IP65 · 读取区域3-8m<br>
-            接口：以太网10M/100M
-        </div>
-    </div>
-    <div class="pc-footer">
-        RSU天线+控制器一体 · 内置四路PSAM<br>
-        温度-40℃~+85℃ · ABS+PC铝合金外壳
-    </div>
-</div>
-
-<!-- 11. 停车管理机器人 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/guan-li-ji-qi-ren.png" alt="停车管理机器人" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">停车管理机器人</span></div>
-        <div class="pc-model">TD-PA-ZS102</div>
-        <div class="pc-specs">
-            15.6寸高亮液晶 · <span>嵌入式Linux系统</span><br>
-            二维码读头1.2米识别距离<br>
-            通讯：TCP/IP
-        </div>
-    </div>
-    <div class="pc-footer">
-        无人值守 · 微信/支付宝被扫<br>
-        一键呼叫 · 手机APP对讲 · 远程开闸
-    </div>
-</div>
-
-<!-- 12. 停车管理机器人（入口版） -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/ru-kou-ban.png" alt="停车管理机器人入口版" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">停车管理机器人</span>（入口版）</div>
-        <div class="pc-model">TD-PA-ZS106</div>
-        <div class="pc-specs">
-            15.6寸高亮液晶 · <span>嵌入式Linux系统</span><br>
-            无现金模块 · 无打印机<br>
-            通讯：TCP/IP
-        </div>
-    </div>
-    <div class="pc-footer">
-        轻量化入口版配置
-    </div>
-</div>
-
-<!-- 13. 停车管理机器人（现金版） -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/xian-jin-ban.png" alt="停车管理机器人现金版" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">停车管理机器人</span>（现金版）</div>
-        <div class="pc-model">TD-PA-ZS106</div>
-        <div class="pc-specs">
-            15.6寸高亮液晶 · <span>支持现金收钞</span><br>
-            打印机 · 小票红包找零<br>
-            二维码读头1.2米
-        </div>
-    </div>
-    <div class="pc-footer">
-        无人值守 · 现金缴费 · 微信红包找零<br>
-        可拆现金+打印模块减配
-    </div>
-</div>
-
-<!-- 14. 一键呼��机（入口） -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/hu-jiao-ji.png" alt="一键呼叫机" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">一键呼叫机</span>（入口）</div>
-        <div class="pc-model">TD-PA-ZS103</div>
-        <div class="pc-specs">
-            12.1寸高亮工业级LCD（选配）<br>
-            <span>嵌入式Linux · TCP/IP通讯</span><br>
-            高灵敏全向麦克风 · 联动车牌识别相机<br>
-            尺寸1350*240*200mm
-        </div>
-    </div>
-    <div class="pc-footer">
-        一键呼叫 · 手机APP实时视频对讲 · 远程开闸<br>
-        加装LCD+¥680 · 加装超声波+¥100
-    </div>
-</div>
-
-<!-- 15. 小二收费机（出口） -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/shou-fei-ji.png" alt="小二收费机" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">小二收费机</span>（出口）</div>
-        <div class="pc-model">TD-PA-ZS104</div>
-        <div class="pc-specs">
-            12.1寸高亮工业级LCD（选配）<br>
-            <span>二维码读头1.2米识别距离</span><br>
-            高灵敏麦克风 · 联网视频联动
-        </div>
-    </div>
-    <div class="pc-footer">
-        微信/支付宝被扫 · 扫码距离达1.2米<br>
-        加装LCD+¥680 · 超声波+¥100
-    </div>
-</div>
-
-<!-- 16. 直流无刷直杆道闸 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/zhi-gan-dao-zha.png" alt="直流无刷直杆道闸" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">直流无刷直杆道闸</span></div>
-        <div class="pc-model">DZ108</div>
-        <div class="pc-specs">
-            直流无刷3秒 · <span>最长配6米直杆</span><br>
-            城邦机芯
-        </div>
-    </div>
-    <div class="pc-footer">
-        标准直杆道闸 · 稳定耐用
-    </div>
-</div>
-
-<!-- 17. 4米直流无刷栅栏道闸 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/zha-lan-dao-zha.png" alt="4米栅栏道闸" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">4米直流无刷栅栏道闸</span></div>
-        <div class="pc-model">DZ103</div>
-        <div class="pc-specs">
-            钣金厚度1.5mm · <span>城邦电机</span><br>
-            直流无刷1~6秒可调
-        </div>
-    </div>
-    <div class="pc-footer">
-        栅栏式 · 适合小区出入口
-    </div>
-</div>
-
-<!-- 18. 直流无刷直杆道闸（带顶灯） -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/zhi-gan-ding-deng.png" alt="直杆道闸带顶灯" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">直流无刷直杆道闸</span>（带顶灯）</div>
-        <div class="pc-model">DZ105</div>
-        <div class="pc-specs">
-            钣金厚度1.5mm · <span>城邦电机</span><br>
-            1~6秒可调 · 带顶灯
-        </div>
-    </div>
-    <div class="pc-footer">
-        带顶灯 · 夜间醒目
-    </div>
-</div>
-
-<!-- 19. 直流无刷快速道闸 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/kuai-su-dao-zha.png" alt="快速道闸" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">直流无刷快速道闸</span></div>
-        <div class="pc-model">DZ110</div>
-        <div class="pc-specs">
-            直流无刷1~6秒可调 · <span>最长配6米直杆</span><br>
-            城邦机芯
-        </div>
-    </div>
-    <div class="pc-footer">
-        快速道闸 · 适合高流量出入口
-    </div>
-</div>
-
-<!-- 20. 广告道闸 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/guang-gao-dao-zha.png" alt="广告道闸" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">广告道闸</span>（4米内）</div>
-        <div class="pc-model">DG10</div>
-        <div class="pc-specs">
-            6秒道闸 · <span>威捷机芯</span><br>
-            含机箱最长4.2米
-        </div>
-    </div>
-    <div class="pc-footer">
-        带广告灯箱面板 · 商业价值高
-    </div>
-</div>
-
-<!-- 21. 小型空降道闸 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/kong-jiang-xiao.webp" alt="小型空降道闸" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">小型空降道闸</span>（4米内）</div>
-        <div class="pc-model">DZ205</div>
-        <div class="pc-specs">
-            空降道闸 · 4米内
-        </div>
-    </div>
-    <div class="pc-footer">
-        空降式设计 · 节省空间
-    </div>
-</div>
-
-<!-- 22. 中型空降道闸 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/kong-jiang-zhong.png" alt="中型空降道闸" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">中型空降道闸</span>（4米内）</div>
-        <div class="pc-model">DZ206</div>
-        <div class="pc-specs">
-            城邦机芯 · 标准3.83米杆
-        </div>
-    </div>
-    <div class="pc-footer">
-        中型空降 · 适合商业停车场
-    </div>
-</div>
-
-<!-- 23. 广告门 -->
-<div class="product-card">
-    <img class="pc-img" src="/images/products/guang-gao-men.webp" alt="广告门" loading="lazy">
-    <div class="pc-body">
-        <div class="pc-name"><span class="highlight">广告门</span></div>
-        <div class="pc-model">S909</div>
-        <div class="pc-specs">
-            广告门设备
-        </div>
-    </div>
-    <div class="pc-footer">
-        带广告展示功能的人行通道门
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-</div>
+     1|---
+     2|layout: page
+     3|title: 产品展示
+     4|---
+     5|
+     6|<style>
+     7|/* ===== 产品展示页样式 ===== */
+     8|.page-banner {
+     9|    position: relative;
+    10|    height: 50vh;
+    11|    min-height: 320px;
+    12|    display: flex;
+    13|    align-items: center;
+    14|    justify-content: center;
+    15|    text-align: center;
+    16|    overflow: hidden;
+    17|    background: linear-gradient(135deg, #0a0a1a 0%, #1a3a2a 100%);
+    18|    margin: -60px -20px 0;
+    19|}
+    20|.page-banner-content {
+    21|    position: relative;
+    22|    z-index: 1;
+    23|    padding: 120px 20px 60px;
+    24|}
+    25|.page-banner h1 {
+    26|    font-size: clamp(2rem, 5vw, 3.5rem);
+    27|    margin: 0 0 12px;
+    28|    color: #fff;
+    29|    font-weight: 800;
+    30|}
+    31|.page-banner h1 .highlight { color: var(--accent, #00e5ff); }
+    32|.page-banner p {
+    33|    font-size: 1.05rem;
+    34|    color: rgba(255,255,255,0.7);
+    35|    max-width: 600px;
+    36|    margin: 0 auto;
+    37|}
+    38|
+    39|.products-page { padding: 60px 0 80px; }
+    40|
+    41|/* ===== 分类标题 ===== */
+    42|.cat-section { margin-bottom: 50px; }
+    43|.cat-section:last-child { margin-bottom: 0; }
+    44|.cat-header {
+    45|    display: flex;
+    46|    align-items: center;
+    47|    gap: 14px;
+    48|    margin-bottom: 24px;
+    49|    padding-bottom: 12px;
+    50|    border-bottom: 1px solid rgba(255,255,255,0.06);
+    51|}
+    52|.cat-header .cat-icon { font-size: 1.8rem; }
+    53|.cat-header h2 { font-size: 1.4rem; margin: 0; }
+    54|.cat-header h2 .highlight { color: var(--accent, #00e5ff); }
+    55|.cat-header .cat-count {
+    56|    font-size: 0.82rem;
+    57|    color: rgba(255,255,255,0.35);
+    58|    margin-left: auto;
+    59|}
+    60|
+    61|/* ===== 产品卡片网格 ===== */
+    62|.product-grid {
+    63|    display: grid;
+    64|    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    65|    gap: 20px;
+    66|}
+    67|.product-card {
+    68|    background: rgba(255,255,255,0.02);
+    69|    border: 1px solid rgba(255,255,255,0.06);
+    70|    border-radius: 16px;
+    71|    overflow: hidden;
+    72|    transition: all 0.3s;
+    73|    display: flex;
+    74|    flex-direction: column;
+    75|}
+    76|.product-card:hover {
+    77|    border-color: rgba(0,229,255,0.15);
+    78|    transform: translateY(-4px);
+    79|    box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    80|}
+    81|.product-card .pc-img {
+    82|    width: 100%;
+    83|    height: 200px;
+    84|    object-fit: cover;
+    85|    display: block;
+    86|    background: linear-gradient(135deg, #1a1a3a, #0a3a2a);
+    87|}
+    88|.product-card .pc-body {
+    89|    padding: 18px 20px;
+    90|    flex: 1;
+    91|}
+    92|.product-card .pc-name {
+    93|    font-size: 1rem;
+    94|    font-weight: 700;
+    95|    color: #fff;
+    96|    margin: 0 0 2px;
+    97|}
+    98|.product-card .pc-name .highlight { color: var(--accent, #00e5ff); }
+    99|.product-card .pc-model {
+   100|    font-family: monospace;
+   101|    font-size: 0.8rem;
+   102|    color: rgba(255,255,255,0.35);
+   103|    margin: 0 0 10px;
+   104|}
+   105|.product-card .pc-specs {
+   106|    font-size: 0.82rem;
+   107|    color: rgba(255,255,255,0.55);
+   108|    line-height: 1.7;
+   109|    margin: 0;
+   110|}
+   111|.product-card .pc-specs span { color: rgba(255,255,255,0.3); }
+   112|.product-card .pc-footer {
+   113|    padding: 12px 20px;
+   114|    border-top: 1px solid rgba(255,255,255,0.04);
+   115|    font-size: 0.78rem;
+   116|    color: rgba(255,255,255,0.4);
+   117|    line-height: 1.6;
+   118|    background: rgba(0,0,0,0.15);
+   119|}
+   120|
+   121|@media (max-width: 700px) {
+   122|    .product-grid { grid-template-columns: 1fr; }
+   123|}
+   124|
+   125|/* ===== Lightbox ===== */
+   126|.lightbox-overlay {
+   127|    display: none;
+   128|    position: fixed;
+   129|    top: 0; left: 0; right: 0; bottom: 0;
+   130|    background: rgba(0,0,0,0.92);
+   131|    z-index: 9999;
+   132|    justify-content: center;
+   133|    align-items: center;
+   134|    cursor: zoom-out;
+   135|}
+   136|.lightbox-overlay.active { display: flex; }
+   137|.lightbox-overlay img {
+   138|    max-width: 90vw;
+   139|    max-height: 90vh;
+   140|    object-fit: contain;
+   141|    border-radius: 8px;
+   142|    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+   143|}
+   144|.lightbox-overlay .lb-close {
+   145|    position: absolute;
+   146|    top: 20px;
+   147|    right: 30px;
+   148|    color: rgba(255,255,255,0.6);
+   149|    font-size: 2rem;
+   150|    cursor: pointer;
+   151|    transition: 0.3s;
+   152|    line-height: 1;
+   153|}
+   154|.lightbox-overlay .lb-close:hover { color: #fff; }
+   155|</style>
+   156|
+<div class="products-page" style="padding-top:0;">
+   165|<div class="container">
+   166|
+   167|<!-- ===== 智慧停车产品 ===== -->
+   168|<div class="cat-section">
+   169|<div class="cat-header">
+   170|    <div class="cat-icon">🅿️</div>
+   171|    <h2>智慧停车 <span class="highlight">产品清单</span></h2>
+   172|    <span class="cat-count">共 23 款产品</span>
+   173|</div>
+   174|<div class="product-grid">
+   175|
+   176|<!-- 1. 智尊款车牌识别一体机（LED款） -->
+   177|<div class="product-card">
+   178|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/zhi-zun-led.png')" class="pc-img-link"><img class="pc-img" src="/images/products/zhi-zun-led.png" alt="智尊款车牌识别一体机" loading="lazy"></a>
+   179|    <div class="pc-body">
+   180|        <div class="pc-name"><span class="highlight">智尊款</span> 车牌识别一体机（LED款）</div>
+   181|        <div class="pc-model">TD-PA-XP711</div>
+   182|        <div class="pc-specs">
+   183|            箱体4*4汉字一套 · <span>500万摄像机</span><br>
+   184|            显示屏 · 喇叭 · 语音 · 15W LED补光灯<br>
+   185|            通讯：RS485/TCPIP
+   186|        </div>
+   187|    </div>
+   188|    <div class="pc-footer">
+   189|        显示4*4汉字 Ø3.75 上红下绿 · AC220V<br>
+   190|        温度-15℃~+85℃ · 尺寸1400*340*300mm
+   191|    </div>
+   192|</div>
+   193|
+   194|<!-- 2. 小元1号 -->
+   195|<div class="product-card">
+   196|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/xiao-yuan-1.png')" class="pc-img-link"><img class="pc-img" src="/images/products/xiao-yuan-1.png" alt="小元1号" loading="lazy"></a>
+   197|    <div class="pc-body">
+   198|        <div class="pc-name"><span class="highlight">小元1号</span></div>
+   199|        <div class="pc-model">TD-PA-XY702</div>
+   200|        <div class="pc-specs">
+   201|            箱体2*4汉字一套 · <span>500万摄像机</span><br>
+   202|            15W补光灯 · 语音功能<br>
+   203|            通讯：RS485/TCPIP
+   204|        </div>
+   205|    </div>
+   206|    <div class="pc-footer">
+   207|        显示304*152mm · 立柱1350*145*230mm<br>
+   208|        温度-15℃~+85℃ · AC220V
+   209|    </div>
+   210|</div>
+   211|
+   212|<!-- 3. 小元2号 -->
+   213|<div class="product-card">
+   214|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/xiao-yuan-2.png')" class="pc-img-link"><img class="pc-img" src="/images/products/xiao-yuan-2.png" alt="小元2号" loading="lazy"></a>
+   215|    <div class="pc-body">
+   216|        <div class="pc-name"><span class="highlight">小元2号</span></div>
+   217|        <div class="pc-model">TD-PA-XY706</div>
+   218|        <div class="pc-specs">
+   219|            箱体2*4汉字一套 · <span>500万摄像机</span><br>
+   220|            15W补光灯 · 语音功能<br>
+   221|            通讯：RS485/TCPIP
+   222|        </div>
+   223|    </div>
+   224|    <div class="pc-footer">
+   225|        显示304*152mm · 立柱1350*145*230mm<br>
+   226|        温度-15℃~+85℃ · AC220V
+   227|    </div>
+   228|</div>
+   229|
+   230|<!-- 4. 小智一号 -->
+   231|<div class="product-card">
+   232|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/xiao-zhi-1.png')" class="pc-img-link"><img class="pc-img" src="/images/products/xiao-zhi-1.png" alt="小智一号" loading="lazy"></a>
+   233|    <div class="pc-body">
+   234|        <div class="pc-name"><span class="highlight">小智一号</span></div>
+   235|        <div class="pc-model">TD-PA-XP703</div>
+   236|        <div class="pc-specs">
+   237|            箱体2*4汉字一套 · <span>500万摄像机</span><br>
+   238|            15W补光灯 · 喇叭 · 语音<br>
+   239|            通讯：RS485/TCPIP
+   240|        </div>
+   241|    </div>
+   242|    <div class="pc-footer">
+   243|        显示304*152mm · 立柱1350*145*230mm<br>
+   244|        温度-15℃~+85℃ · AC220V
+   245|    </div>
+   246|</div>
+   247|
+   248|<!-- 5. 新版智信款四行显示车牌识别 -->
+   249|<div class="product-card">
+   250|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/zhi-xin-lcd.png')" class="pc-img-link"><img class="pc-img" src="/images/products/zhi-xin-lcd.png" alt="新版智信款车牌识别" loading="lazy"></a>
+   251|    <div class="pc-body">
+   252|        <div class="pc-name"><span class="highlight">新版智信款</span> 四行显示车牌识别</div>
+   253|        <div class="pc-model">TD-PA-XP710</div>
+   254|        <div class="pc-specs">
+   255|            10.1寸LCD高亮液晶显示屏 · <span>500万摄像机</span><br>
+   256|            15W补光灯 · 语音功能<br>
+   257|            通讯：RS485/TCPIP
+   258|        </div>
+   259|    </div>
+   260|    <div class="pc-footer">
+   261|        显示304*152mm · 立柱1350*145*230mm<br>
+   262|        温度-15℃~+85℃ · AC220V
+   263|    </div>
+   264|</div>
+   265|
+   266|<!-- 6. 智尊款系列（LCD款） -->
+   267|<div class="product-card">
+   268|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/zhi-zun-lcd.png')" class="pc-img-link"><img class="pc-img" src="/images/products/zhi-zun-lcd.png" alt="智尊款LCD款" loading="lazy"></a>
+   269|    <div class="pc-body">
+   270|        <div class="pc-name"><span class="highlight">智尊款系列</span>（LCD款）</div>
+   271|        <div class="pc-model">ZZ712</div>
+   272|        <div class="pc-specs">
+   273|            18.5寸高清液晶显示屏 · <span>嵌入式LINUX驱动</span><br>
+   274|            1000nt高亮度 · 500万摄像机<br>
+   275|            通讯：TCPIP
+   276|        </div>
+   277|    </div>
+   278|    <div class="pc-footer">
+   279|        尺寸1400*340*300mm · AC220V<br>
+   280|        温度-15℃~+85℃ · 道闸/车牌识别配套方案
+   281|    </div>
+   282|</div>
+   283|
+   284|<!-- 7. 星光系列 -->
+   285|<div class="product-card">
+   286|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/xing-guang.png')" class="pc-img-link"><img class="pc-img" src="/images/products/xing-guang.png" alt="星光系列" loading="lazy"></a>
+   287|    <div class="pc-body">
+   288|        <div class="pc-name"><span class="highlight">星光系列</span></div>
+   289|        <div class="pc-model">XG202</div>
+   290|        <div class="pc-specs">
+   291|            箱体2*4汉字一套 · <span>含立柱</span><br>
+   292|            500万摄像机 · 三色显示 · 15W补光灯<br>
+   293|            通讯：RS485/TCPIP
+   294|        </div>
+   295|    </div>
+   296|    <div class="pc-footer">
+   297|        显示155*580/304*304mm · 立柱H1650mm<br>
+   298|        温度-15℃~+85℃ · AC220V
+   299|    </div>
+   300|</div>
+   301|
+   302|<!-- 8. 星眸系列 -->
+   303|<div class="product-card">
+   304|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/xing-mou.webp')" class="pc-img-link"><img class="pc-img" src="/images/products/xing-mou.webp" alt="星眸系列" loading="lazy"></a>
+   305|    <div class="pc-body">
+   306|        <div class="pc-name"><span class="highlight">星眸系列</span></div>
+   307|        <div class="pc-model">XM702</div>
+   308|        <div class="pc-specs">
+   309|            箱体4*4汉字一套 · <span>500万摄像机</span><br>
+   310|            三色显示 · 15W补光灯<br>
+   311|            通讯：RS485/TCPIP
+   312|        </div>
+   313|    </div>
+   314|    <div class="pc-footer">
+   315|        显示304*304mm · 方柱H1550mm<br>
+   316|        温度-15℃~+85℃ · AC220V
+   317|    </div>
+   318|</div>
+   319|
+   320|<!-- 9. 超眸系列 -->
+   321|<div class="product-card">
+   322|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/chao-mou.png')" class="pc-img-link"><img class="pc-img" src="/images/products/chao-mou.png" alt="超眸系列" loading="lazy"></a>
+   323|    <div class="pc-body">
+   324|        <div class="pc-name"><span class="highlight">超眸系列</span></div>
+   325|        <div class="pc-model">CM602</div>
+   326|        <div class="pc-specs">
+   327|            箱体4*4汉字一套 · <span>500万摄像机</span><br>
+   328|            三色显示 · 15W补光灯<br>
+   329|            通讯：RS485/TCPIP
+   330|        </div>
+   331|    </div>
+   332|    <div class="pc-footer">
+   333|        显示304*304mm · 方柱H1550mm<br>
+   334|        温度-15℃~+85℃ · AC220V
+   335|    </div>
+   336|</div>
+   337|
+   338|<!-- 10. 车场ETC天线 -->
+   339|<div class="product-card">
+   340|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/etc-tian-xian.webp')" class="pc-img-link"><img class="pc-img" src="/images/products/etc-tian-xian.webp" alt="车场ETC天线" loading="lazy"></a>
+   341|    <div class="pc-body">
+   342|        <div class="pc-name"><span class="highlight">车场ETC天线</span></div>
+   343|        <div class="pc-model">TD-PA-TX102</div>
+   344|        <div class="pc-specs">
+   345|            电压12-24V DC · <span>四核1.4G ARM处理器</span><br>
+   346|            防护IP65 · 读取区域3-8m<br>
+   347|            接口：以太网10M/100M
+   348|        </div>
+   349|    </div>
+   350|    <div class="pc-footer">
+   351|        RSU天线+控制器一体 · 内置四路PSAM<br>
+   352|        温度-40℃~+85℃ · ABS+PC铝合金外壳
+   353|    </div>
+   354|</div>
+   355|
+   356|<!-- 11. 停车管理机器人 -->
+   357|<div class="product-card">
+   358|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/guan-li-ji-qi-ren.png')" class="pc-img-link"><img class="pc-img" src="/images/products/guan-li-ji-qi-ren.png" alt="停车管理机器人" loading="lazy"></a>
+   359|    <div class="pc-body">
+   360|        <div class="pc-name"><span class="highlight">停车管理机器人</span></div>
+   361|        <div class="pc-model">TD-PA-ZS102</div>
+   362|        <div class="pc-specs">
+   363|            15.6寸高亮液晶 · <span>嵌入式Linux系统</span><br>
+   364|            二维码读头1.2米识别距离<br>
+   365|            通讯：TCP/IP
+   366|        </div>
+   367|    </div>
+   368|    <div class="pc-footer">
+   369|        无人值守 · 微信/支付宝被扫<br>
+   370|        一键呼叫 · 手机APP对讲 · 远程开闸
+   371|    </div>
+   372|</div>
+   373|
+   374|<!-- 12. 停车管理机器人（入口版） -->
+   375|<div class="product-card">
+   376|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/ru-kou-ban.png')" class="pc-img-link"><img class="pc-img" src="/images/products/ru-kou-ban.png" alt="停车管理机器人入口版" loading="lazy"></a>
+   377|    <div class="pc-body">
+   378|        <div class="pc-name"><span class="highlight">停车管理机器人</span>（入口版）</div>
+   379|        <div class="pc-model">TD-PA-ZS106</div>
+   380|        <div class="pc-specs">
+   381|            15.6寸高亮液晶 · <span>嵌入式Linux系统</span><br>
+   382|            无现金模块 · 无打印机<br>
+   383|            通讯：TCP/IP
+   384|        </div>
+   385|    </div>
+   386|    <div class="pc-footer">
+   387|        轻量化入口版配置
+   388|    </div>
+   389|</div>
+   390|
+   391|<!-- 13. 停车管理机器人（现金版） -->
+   392|<div class="product-card">
+   393|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/xian-jin-ban.png')" class="pc-img-link"><img class="pc-img" src="/images/products/xian-jin-ban.png" alt="停车管理机器人现金版" loading="lazy"></a>
+   394|    <div class="pc-body">
+   395|        <div class="pc-name"><span class="highlight">停车管理机器人</span>（现金版）</div>
+   396|        <div class="pc-model">TD-PA-ZS106</div>
+   397|        <div class="pc-specs">
+   398|            15.6寸高亮液晶 · <span>支持现金收钞</span><br>
+   399|            打印机 · 小票红包找零<br>
+   400|            二维码读头1.2米
+   401|        </div>
+   402|    </div>
+   403|    <div class="pc-footer">
+   404|        无人值守 · 现金缴费 · 微信红包找零<br>
+   405|        可拆现金+打印模块减配
+   406|    </div>
+   407|</div>
+   408|
+   409|<!-- 14. 一键呼��机（入口） -->
+   410|<div class="product-card">
+   411|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/hu-jiao-ji.png')" class="pc-img-link"><img class="pc-img" src="/images/products/hu-jiao-ji.png" alt="一键呼叫机" loading="lazy"></a>
+   412|    <div class="pc-body">
+   413|        <div class="pc-name"><span class="highlight">一键呼叫机</span>（入口）</div>
+   414|        <div class="pc-model">TD-PA-ZS103</div>
+   415|        <div class="pc-specs">
+   416|            12.1寸高亮工业级LCD（选配）<br>
+   417|            <span>嵌入式Linux · TCP/IP通讯</span><br>
+   418|            高灵敏全向麦克风 · 联动车牌识别相机<br>
+   419|            尺寸1350*240*200mm
+   420|        </div>
+   421|    </div>
+   422|    <div class="pc-footer">
+   423|        一键呼叫 · 手机APP实时视频对讲 · 远程开闸<br>
+   424|        加装LCD+¥680 · 加装超声波+¥100
+   425|    </div>
+   426|</div>
+   427|
+   428|<!-- 15. 小二收费机（出口） -->
+   429|<div class="product-card">
+   430|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/shou-fei-ji.png')" class="pc-img-link"><img class="pc-img" src="/images/products/shou-fei-ji.png" alt="小二收费机" loading="lazy"></a>
+   431|    <div class="pc-body">
+   432|        <div class="pc-name"><span class="highlight">小二收费机</span>（出口）</div>
+   433|        <div class="pc-model">TD-PA-ZS104</div>
+   434|        <div class="pc-specs">
+   435|            12.1寸高亮工业级LCD（选配）<br>
+   436|            <span>二维码读头1.2米识别距离</span><br>
+   437|            高灵敏麦克风 · 联网视频联动
+   438|        </div>
+   439|    </div>
+   440|    <div class="pc-footer">
+   441|        微信/支付宝被扫 · 扫码距离达1.2米<br>
+   442|        加装LCD+¥680 · 超声波+¥100
+   443|    </div>
+   444|</div>
+   445|
+   446|<!-- 16. 直流无刷直杆道闸 -->
+   447|<div class="product-card">
+   448|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/zhi-gan-dao-zha.png')" class="pc-img-link"><img class="pc-img" src="/images/products/zhi-gan-dao-zha.png" alt="直流无刷直杆道闸" loading="lazy"></a>
+   449|    <div class="pc-body">
+   450|        <div class="pc-name"><span class="highlight">直流无刷直杆道闸</span></div>
+   451|        <div class="pc-model">DZ108</div>
+   452|        <div class="pc-specs">
+   453|            直流无刷3秒 · <span>最长配6米直杆</span><br>
+   454|            城邦机芯
+   455|        </div>
+   456|    </div>
+   457|    <div class="pc-footer">
+   458|        标准直杆道闸 · 稳定耐用
+   459|    </div>
+   460|</div>
+   461|
+   462|<!-- 17. 4米直流无刷栅栏道闸 -->
+   463|<div class="product-card">
+   464|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/zha-lan-dao-zha.png')" class="pc-img-link"><img class="pc-img" src="/images/products/zha-lan-dao-zha.png" alt="4米栅栏道闸" loading="lazy"></a>
+   465|    <div class="pc-body">
+   466|        <div class="pc-name"><span class="highlight">4米直流无刷栅栏道闸</span></div>
+   467|        <div class="pc-model">DZ103</div>
+   468|        <div class="pc-specs">
+   469|            钣金厚度1.5mm · <span>城邦电机</span><br>
+   470|            直流无刷1~6秒可调
+   471|        </div>
+   472|    </div>
+   473|    <div class="pc-footer">
+   474|        栅栏式 · 适合小区出入口
+   475|    </div>
+   476|</div>
+   477|
+   478|<!-- 18. 直流无刷直杆道闸（带顶灯） -->
+   479|<div class="product-card">
+   480|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/zhi-gan-ding-deng.png')" class="pc-img-link"><img class="pc-img" src="/images/products/zhi-gan-ding-deng.png" alt="直杆道闸带顶灯" loading="lazy"></a>
+   481|    <div class="pc-body">
+   482|        <div class="pc-name"><span class="highlight">直流无刷直杆道闸</span>（带顶灯）</div>
+   483|        <div class="pc-model">DZ105</div>
+   484|        <div class="pc-specs">
+   485|            钣金厚度1.5mm · <span>城邦电机</span><br>
+   486|            1~6秒可调 · 带顶灯
+   487|        </div>
+   488|    </div>
+   489|    <div class="pc-footer">
+   490|        带顶灯 · 夜间醒目
+   491|    </div>
+   492|</div>
+   493|
+   494|<!-- 19. 直流无刷快速道闸 -->
+   495|<div class="product-card">
+   496|    <a href="javascript:void(0)" onclick="openLightbox('/images/products/kuai-su-dao-zha.png')" class="pc-img-link"><img class="pc-img" src="/images/products/kuai-su-dao-zha.png" alt="快速道闸" loading="lazy"></a>
+   497|    <div class="pc-body">
+   498|        <div class="pc-name"><span class="highlight">直流无刷快速道闸</span></div>
+   499|        <div class="pc-model">DZ110</div>
+   500|        <div class="pc-specs">
+   501|

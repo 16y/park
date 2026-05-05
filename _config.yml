@@ -28,6 +28,8 @@ i18n_dir: :lang
 skip_render:
   - 'parking/**'
   - 'security/**'
+  - 'about/**'
+  - 'contact/**'
   - 'images/**'
   - 'style.css'
 
