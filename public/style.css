@@ -1,0 +1,847 @@
+/* ================================================================
+   西藏智盈通信息工程有限公司 - 官网样式表
+   文件：style.css
+   说明：公司官网全部样式，包括页面布局、动画、幻灯片、响应式
+   ================================================================ */
+
+/* ==================== 1. 基础重置与全局样式 ==================== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* 平滑滚动 */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    color: #fff;               /* 全局白色文字 */
+    background: #0a0a1a;       /* 深色背景底色（备用） */
+    overflow-x: hidden;        /* 防止横向滚动 */
+}
+
+a {
+    text-decoration: none;     /* 去掉链接下划线 */
+    color: inherit;
+}
+
+/* ==================== 2. 全局动态背景 ==================== */
+
+/*
+ * .bg-canvas - 全屏固定的渐变色动态背景
+ * 四角渐变色缓慢切换，制造深邃科技感
+ */
+.bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: linear-gradient(135deg, #0a0a1a 0%, #0f0a2e 15%, #0a1628 30%, #120a2e 50%, #0a0a1a 70%, #1a0a2e 85%, #0a0a1a 100%);
+    background-size: 600% 600%;
+    animation: gradientShift 20s ease infinite;
+}
+
+/* 渐变色位置循环动画——更丰富的过渡 */
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    25%  { background-position: 100% 0%; }
+    50%  { background-position: 100% 100%; }
+    75%  { background-position: 0% 100%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ==================== 3. 漂浮粒子效果 ==================== */
+
+/*
+ * .particles - 固定定位的粒子层
+ * 多个彩色小圆点从底部缓慢上升，营造星空感
+ */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatParticle 12s infinite;
+}
+
+/* 12个粒子的位置和颜色各不相同，延迟不同实现错落效果 */
+.particle:nth-child(1)  { left: 10%; animation-delay: 0s;  background: #ff6b6b; }
+.particle:nth-child(2)  { left: 20%; animation-delay: 1s;  background: #48dbfb; }
+.particle:nth-child(3)  { left: 35%; animation-delay: 2s;  background: #ff9ff3; }
+.particle:nth-child(4)  { left: 50%; animation-delay: 3s;  background: #feca57; }
+.particle:nth-child(5)  { left: 65%; animation-delay: 4s;  background: #54a0ff; }
+.particle:nth-child(6)  { left: 75%; animation-delay: 5s;  background: #5f27cd; }
+.particle:nth-child(7)  { left: 85%; animation-delay: 6s;  background: #ff6348; }
+.particle:nth-child(8)  { left: 45%; animation-delay: 7s;  background: #2ed573; }
+.particle:nth-child(9)  { left: 15%; animation-delay: 8s;  background: #ffa502; }
+.particle:nth-child(10) { left: 90%; animation-delay: 9s;  background: #1e90ff; }
+.particle:nth-child(11) { left: 30%; animation-delay: 10s; background: #ff4757; }
+.particle:nth-child(12) { left: 70%; animation-delay: 11s; background: #a29bfe; }
+
+/* 粒子从底部升到顶部，从小变大，先淡入后淡出 */
+@keyframes floatParticle {
+    0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+    20%  { opacity: 0.8; }
+    80%  { opacity: 0.8; }
+    100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+/* ==================== 4. 导航栏 ==================== */
+
+/*
+ * nav - 固定在页面顶部的导航栏
+ * 半透明毛玻璃效果，滚动后背景加深
+ */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    backdrop-filter: blur(12px);          /* 毛玻璃模糊效果 */
+    background: rgba(10, 10, 26, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.3s;
+}
+
+/* 左侧logo区域：图片 + 公司名 */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.nav-logo img {
+    height: 44px;
+    width: auto;
+    border-radius: 8px;
+}
+
+/* 公司名：渐变色文字，流光闪烁 */
+.nav-logo span {
+    font-size: 18px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #f093fb, #f5576c, #4facfe, #43e97b);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShine 3s ease infinite;
+}
+
+/* 渐变色横向移动，制造流光效果 */
+@keyframes textShine {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 右侧导航链接列表 */
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    transition: 0.3s;
+    position: relative;
+}
+
+/* 导航链接的底部悬浮下划线动画 */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4facfe, #f093fb);
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* 移动端汉堡菜单按钮（默认隐藏） */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* ==================== 5. Hero区域（带幻灯片背景） ==================== */
+/* ===== HERO SLIDESHOW ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+/*
+ * .hero-slide - 每一张幻灯片
+ * 用AI生成的图片做背景，background-size:cover全屏铺满
+ * 默认隐藏(opacity:0)，有.active时显示(opacity:1)
+ * transition实现平滑淡入淡出
+ */
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    background-size: cover;           /* 图片铺满全屏 */
+    background-position: center;      /* 图片居中 */
+    background-repeat: no-repeat;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+/*
+ * 幻灯片上面的暗色遮罩
+ * 让文字在白亮背景下依然清晰可读
+ */
+.slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 26, 0.5);
+}
+
+/* ---------- 幻灯片导航点 ---------- */
+
+/*
+ * .hero-dots - 底部的小圆点导航
+ * 当前幻灯片对应的圆点变长条+发光
+ */
+.hero-dots {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 5;
+}
+
+.hero-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.4s;
+    border: none;
+}
+
+/* 当前活跃点：变长 + 蓝色发光 */
+.hero-dot.active {
+    background: #4facfe;
+    box-shadow: 0 0 12px rgba(79, 172, 254, 0.6);
+    width: 28px;
+    border-radius: 5px;
+}
+
+.hero-dot:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* ---------- Hero区域文字内容 ---------- */
+
+/* 公司logo图片 */
+.hero-logo {
+    margin-bottom: 30px;
+    animation: floatIn 1.5s ease-out;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-logo img {
+    height: 100px;
+    width: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 60px rgba(79, 172, 254, 0.3);
+}
+
+/* logo从上方飘入动画 */
+@keyframes floatIn {
+    0%   { opacity: 0; transform: translateY(-40px) scale(0.8); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* 主标题 - 响应式字号 */
+.hero h1 {
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* 标题中的渐变色部分 - 多彩闪烁 */
+.hero h1 .gradient-text {
+    background: linear-gradient(90deg, #f093fb, #f5576c, #feca57, #4facfe, #43e97b, #a29bfe);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShine 4s ease infinite;
+}
+
+.hero-sub {
+    font-size: clamp(16px, 2vw, 22px);
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+    margin-bottom: 40px;
+    animation: fadeUp 1s ease-out 0.3s both;
+    position: relative;
+    z-index: 2;
+}
+
+/* 上移淡入动画 */
+@keyframes fadeUp {
+    0%   { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeUp 1s ease-out 0.6s both;
+    position: relative;
+    z-index: 2;
+}
+
+/* ---------- 通用按钮 ---------- */
+.btn {
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(79, 172, 254, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(79, 172, 254, 0.5);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+/* ---------- 滚动提示（底部箭头） ---------- */
+/*
+ * .scroll-indicator - 放在hero按钮下方自然排列
+ * 使用flex布局跟随按钮流，不再用绝对定位，避免与按钮重叠
+ */
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.5;
+    animation: bounce 2s infinite;
+    margin-top: 60px;
+    z-index: 5;
+    position: relative;
+}
+
+.scroll-indicator span {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.scroll-indicator .arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+/* 上下弹跳 */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(8px); }
+}
+
+/* ==================== 6. 通用区块样式 ==================== */
+
+section {
+    padding: 100px 20px;
+}
+
+.section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 区块标题 - 居中 */
+.section-title {
+    text-align: center;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+/* 标题中需要高亮的部分 */
+.section-title .highlight {
+    background: linear-gradient(90deg, #f093fb, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 区块副标题 */
+.section-desc {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 60px;
+}
+
+/* ==================== 7. 四大核心服务 ==================== */
+
+/*
+ * 4个服务卡片网格布局
+ * auto-fit自适应列数：大屏4列，中屏2列，小屏1列
+ */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* 单个服务卡片 - 半透明毛玻璃 */
+.service-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 40px 28px;
+    transition: all 0.4s;
+    backdrop-filter: blur(4px);
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+}
+
+/* 卡片顶部彩色装饰条（4个卡片4种颜色） */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 20px 20px 0 0;
+}
+
+.service-card:nth-child(1)::before { background: linear-gradient(90deg, #4facfe, #00f2fe); }
+.service-card:nth-child(2)::before { background: linear-gradient(90deg, #f093fb, #f5576c); }
+.service-card:nth-child(3)::before { background: linear-gradient(90deg, #feca57, #ff6348); }
+.service-card:nth-child(4)::before { background: linear-gradient(90deg, #43e97b, #38f9d7); }
+
+/* 悬停上浮效果 */
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* ==================== 8. 选择我们的理由 ==================== */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.feature-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* 序号：渐变色大字 */
+.feature-number {
+    font-size: 36px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #4facfe, #f093fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+
+.feature-item h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.feature-item p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ==================== 9. 公司信息 ==================== */
+
+/*
+ * .info-section - 特殊背景区块
+ * 用于"关于我们"和"联系我们"
+ */
+.info-section {
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 两栏布局：公司信息 | 经营范围 */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* 信息卡片 */
+.info-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 36px;
+}
+
+.info-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-card p,
+.info-card li {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.info-card ul {
+    list-style: none;
+}
+
+.info-card ul li::before {
+    content: '✦ ';
+    background: linear-gradient(90deg, #4facfe, #f093fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 公司信息的条目行 */
+.info-card .company-detail {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-card .company-detail:last-child {
+    border: none;
+}
+
+.info-card .label {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.info-card .value {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 四个核心价值观统计 */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #f093fb, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+/* ==================== 10. 联系我们 ==================== */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.contact-item {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.contact-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.contact-item h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.contact-item p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+
+/* ---------- 微信二维码区域 ---------- */
+
+/*
+ * 微信二维码图片和文字说明
+ * 如果图片不存在（加载失败），自动显示占位文字
+ */
+.wechat-qr-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.wechat-qr-wrapper img {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    object-fit: contain;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+/* 微信特有的绿色高亮 */
+.wechat-qr-wrapper img:hover {
+    border-color: #07c160;
+    box-shadow: 0 0 30px rgba(7, 193, 96, 0.3);
+}
+
+.wechat-hint {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* ==================== 11. 页脚 ==================== */
+
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+    line-height: 2;
+}
+
+/* ==================== 12. 滚动渐入动画 ==================== */
+
+/*
+ * 页面滚动时，元素从下方40px位置淡入
+ * 由IntersectionObserver JS控制添加.visible类
+ */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==================== 13. 移动端响应式 ==================== */
+
+/*
+ * 屏幕宽度 ≤ 768px 时的样式覆盖
+ * 主要调整：导航栏变为汉堡菜单、内边距缩小、信息栏变为单列
+ */
+@media (max-width: 768px) {
+    /* 导航栏 */
+    nav {
+        padding: 14px 20px;
+    }
+
+    /* 导航链接默认隐藏，点击汉堡菜单后显示 */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(10, 10, 26, 0.95);
+        backdrop-filter: blur(12px);
+        padding: 20px;
+        gap: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* 显示汉堡菜单按钮 */
+    .hamburger {
+        display: flex;
+    }
+
+    /* logo缩小 */
+    .nav-logo img {
+        height: 36px;
+    }
+
+    .nav-logo span {
+        font-size: 15px;
+    }
+
+    /* 区块缩小内边距 */
+    section {
+        padding: 60px 16px;
+    }
+
+    /* 信息两栏变单栏 */
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
