@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<!-- ============================================================
+    西藏智盈通信息工程有限公司 - 智慧停车场专题页
+    版本：v1.0
+    说明：智慧停车业务独立介绍页，含系统架构、功能模块、优势、案例
+    链接来源：park.cab 首页"智慧停车场建设"卡片
+    ============================================================ -->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>智慧停车场系统 - 西藏智盈通信息工程有限公司 | park.cab</title>
+    <meta name="description" content="西藏智盈通智慧停车系统——车牌识别、车位引导、无感支付、云端管理平台。覆盖住宅小区、商业综合体、医院、写字楼等场景。西藏日喀则本土智慧停车服务商。">
+    <meta name="keywords" content="智慧停车,车牌识别,车位引导,无感支付,停车场管理,西藏停车,日喀则停车,停车场系统,车位管理系统">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="智慧停车场系统 - 西藏智盈通">
+    <meta property="og:description" content="车牌识别 · 车位引导 · 无感支付 · 云端管理——全流程智能化停车体验">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://park.cab/parking/">
+    <link rel="canonical" href="https://park.cab/parking/">
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- 页面专用样式：避免污染全局 -->
+    <style>
+        /* ===== 智慧停车专题页专用样式 ===== */
+
+        /* 页面横幅 */
+        .page-banner {
+            position: relative;
+            height: 50vh;
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a4e 100%);
+        }
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../images/slide-parking.jpg') center/cover no-repeat;
+            opacity: 0.25;
+            z-index: 0;
+        }
+        .page-banner-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 20px;
+        }
+        .page-banner h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin: 0 0 16px;
+        }
+        .page-banner h1 .highlight { color: var(--accent, #00e5ff); }
+        .page-banner p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 页面内容容器 */
+        .page-content { padding: 60px 20px 80px; }
+        .page-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* 章节标题 */
+        .section-block { margin-bottom: 70px; }
+        .section-block:last-child { margin-bottom: 0; }
+        .section-block h2 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin: 0 0 12px;
+        }
+        .section-block h2 .highlight { color: var(--accent, #00e5ff); }
+        .section-block > .sub-title {
+            text-align: center;
+            color: rgba(255,255,255,0.55);
+            margin: 0 0 40px;
+            font-size: 1rem;
+        }
+
+        /* 功能网格 - 04布局 */
+        .feature-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 32px 24px;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(0,229,255,0.2);
+            transform: translateY(-3px);
+        }
+        .feature-card .fc-icon { font-size: 2.4rem; margin-bottom: 12px; }
+        .feature-card h3 { font-size: 1.15rem; margin: 0 0 10px; }
+        .feature-card p {
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* 系统架构流程图 */
+        .arch-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 0;
+            margin: 40px 0;
+        }
+        .arch-node {
+            background: rgba(0,229,255,0.08);
+            border: 1px solid rgba(0,229,255,0.2);
+            border-radius: 12px;
+            padding: 16px 22px;
+            text-align: center;
+            min-width: 120px;
+            flex: 1 1 140px;
+        }
+        .arch-node .an-icon { font-size: 1.6rem; }
+        .arch-node .an-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 6px;
+        }
+        .arch-arrow {
+            color: rgba(0,229,255,0.4);
+            font-size: 1.2rem;
+            padding: 0 6px;
+            flex-shrink: 0;
+        }
+        @media (max-width: 700px) {
+            .arch-flow { flex-direction: column; }
+            .arch-arrow { transform: rotate(90deg); }
+        }
+
+        /* 适用场景列表 */
+        .scene-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .scene-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .scene-item:hover {
+            border-color: rgba(0,229,255,0.2);
+            background: rgba(0,229,255,0.04);
+        }
+        .scene-item .si-icon { font-size: 2rem; margin-bottom: 8px; }
+        .scene-item h4 { margin: 0 0 6px; font-size: 1rem; }
+        .scene-item p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* 优势列表 */
+        .adv-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 640px) {
+            .feature-grid-4 { grid-template-columns: 1fr; }
+            .adv-grid { grid-template-columns: 1fr; }
+        }
+        .adv-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .adv-item .ai-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .adv-item h4 { margin: 0 0 6px; font-size: 1rem; }
+        .adv-item p {
+            margin: 0;
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.55);
+        }
+
+        /* 底部CTA */
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,229,255,0.04) 100%);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .cta-section h2 { margin: 0 0 12px; }
+        .cta-section p {
+            color: rgba(255,255,255,0.55);
+            margin: 0 0 28px;
+            font-size: 1rem;
+        }
+        .btn-back {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        .btn-back:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.2);
+        }
+        .btn-contact {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #00e5ff, #7c4dff);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-left: 12px;
+        }
+        .btn-contact:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,229,255,0.2);
+        }
+        @media (max-width: 480px) {
+            .btn-contact { margin: 12px 0 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== 背景 ==================== -->
+    <div class="bg-canvas"></div>
+
+    <!-- ==================== 导航栏 ==================== -->
+    <nav>
+        <div class="nav-logo">
+            <img src="../images/logo.jpg" alt="西藏智盈通信息工程有限公司">
+            <span>智盈通信息工程</span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../">✦ 返回首页</a></li>
+            <li><a href="#system">系统架构</a></li>
+            <li><a href="#features">功能模块</a></li>
+            <li><a href="#scenes">适用场景</a></li>
+            <li><a href="#contact">联系我们</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- ==================== 页面横幅 ==================== -->
+    <section class="page-banner">
+        <div class="page-banner-content">
+            <h1><span class="highlight">智慧停车场</span> 系统</h1>
+            <p>车牌识别 · 车位引导 · 无感支付 · 云端管理 —— 全流程智能化停车体验</p>
+        </div>
+    </section>
+
+    <!-- ==================== 内容主体 ==================== -->
+    <div class="page-content">
+
+        <!-- ===== 系统架构 ===== -->
+        <div class="page-inner">
+            <div class="section-block" id="system">
+                <h2>系统 <span class="highlight">架构</span></h2>
+                <p class="sub-title">端云一体，软硬协同，打造高效稳定的智慧停车系统</p>
+
+                <div class="arch-flow">
+                    <div class="arch-node">
+                        <div class="an-icon">📷</div>
+                        <div class="an-label">车牌识别相机</div>
+                    </div>
+                    <div class="arch-arrow">→</div>
+                    <div class="arch-node">
+                        <div class="an-icon">🖥️</div>
+                        <div class="an-label">现场控制终端</div>
+                    </div>
+                    <div class="arch-arrow">→</div>
+                    <div class="arch-node">
+                        <div class="an-icon">☁️</div>
+                        <div class="an-label">云端管理平台</div>
+                    </div>
+                    <div class="arch-arrow">→</div>
+                    <div class="arch-node">
+                        <div class="an-icon">📱</div>
+                        <div class="an-label">用户端小程序</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 核心功能模块 ===== -->
+        <div class="page-inner" id="features">
+            <div class="section-block">
+                <h2>核心 <span class="highlight">功能模块</span></h2>
+                <p class="sub-title">六大模块协同运作，覆盖停车全流程管理</p>
+
+                <div class="feature-grid-4">
+                    <div class="feature-card">
+                        <div class="fc-icon">🔍</div>
+                        <h3>AI车牌识别</h3>
+                        <p>采用深度学习算法，支持蓝牌、绿牌（新能源）、黄牌、军警牌等全类型车牌识别，识别率≥99.5%。无牌车辆自动触发扫码入场，夜间红外补光，全天候稳定运行。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="fc-icon">🅿️</div>
+                        <h3>车位引导系统</h3>
+                        <p>超声波/地磁车位检测器实时采集车位状态，LED引导屏＋指示灯层层指引，车主快速找到空位。支持反向寻车——输入车牌号即可导航至车辆停放位置。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="fc-icon">💳</div>
+                        <h3>无感支付</h3>
+                        <p>支持微信/支付宝扫码支付、ETC扣款、月卡自动续费、无感支付（绑定车牌自动扣款）。出场无需停车，车牌识别后自动抬杆，通行时间≤2秒。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="fc-icon">☁️</div>
+                        <h3>云端管理平台</h3>
+                        <p>B/S架构管理后台，实时查看车位占用率、车流量统计、收费报表、异常告警。支持多车场统一管理、远程开闸、权限分级、数据导出。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="fc-icon">📱</div>
+                        <h3>车主小程序</h3>
+                        <p>微信小程序一站式服务：剩余车位数查询、提前缴费、月卡购买/续费、电子发票、停车记录查询、车位预约。提升车主体验，减少出口排队。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="fc-icon">🔐</div>
+                        <h3>安全管控</h3>
+                        <p>异常车牌实时告警（黑名单/敏感车辆布控）、一车一杆防跟车、防逆行检测、设备离线告警。云端数据加密存储，操作日志全程追溯。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="fc-icon">⚙️</div>
+                        <h3>设备自检</h3>
+                        <p>道闸、相机、显示屏、地感线圈等设备状态实时监控，故障自动诊断与告警推送。支持远程重启和固件升级，降低现场维护成本。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="fc-icon">📊</div>
+                        <h3>数据分析</h3>
+                        <p>车流量热力图、高峰期预测、收入趋势分析、车位周转率统计。经营数据可视化大屏展示，辅助停车场精细化运营决策。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 适用场景 ===== -->
+        <div class="page-inner" id="scenes">
+            <div class="section-block">
+                <h2>适用 <span class="highlight">场景</span></h2>
+                <p class="sub-title">覆盖多种业态，灵活定制方案</p>
+
+                <div class="scene-list">
+                    <div class="scene-item">
+                        <div class="si-icon">🏢</div>
+                        <h4>商业综合体</h4>
+                        <p>大型商场、购物中心<br>多入口多出口管理</p>
+                    </div>
+                    <div class="scene-item">
+                        <div class="si-icon">🏘️</div>
+                        <h4>住宅小区</h4>
+                        <p>小区车辆出入管理<br>业主月卡＋访客管理</p>
+                    </div>
+                    <div class="scene-item">
+                        <div class="si-icon">🏥</div>
+                        <h4>医院</h4>
+                        <p>就医车辆免费时段<br>职工优惠＋对外开放</p>
+                    </div>
+                    <div class="scene-item">
+                        <div class="si-icon">🏢</div>
+                        <h4>写字楼</h4>
+                        <p>固定车位＋临停车<br>分时段收费管理</p>
+                    </div>
+                    <div class="scene-item">
+                        <div class="si-icon">🎫</div>
+                        <h4>交通枢纽</h4>
+                        <p>火车站、机场停车场<br>长时间＋短时停放</p>
+                    </div>
+                    <div class="scene-item">
+                        <div class="si-icon">🏫</div>
+                        <h4>学校</h4>
+                        <p>教职工与来访车辆<br>分区分时段管控</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 我们的优势 ===== -->
+        <div class="page-inner">
+            <div class="section-block">
+                <h2>为什么选择 <span class="highlight">我们</span></h2>
+                <p class="sub-title">本土服务 + 成熟方案，让停车管理降本增效</p>
+
+                <div class="adv-grid">
+                    <div class="adv-item">
+                        <div class="ai-icon">🏔️</div>
+                        <div>
+                            <h4>本土化服务</h4>
+                            <p>扎根日喀则，深入了解本地需求。提供藏汉双语界面，响应及时，售后无忧。</p>
+                        </div>
+                    </div>
+                    <div class="adv-item">
+                        <div class="ai-icon">⚡</div>
+                        <div>
+                            <h4>快速部署</h4>
+                            <p>标准化施工流程，单个车场最快3天完成安装调试，减少对正常运营的影响。</p>
+                        </div>
+                    </div>
+                    <div class="adv-item">
+                        <div class="ai-icon">💰</div>
+                        <div>
+                            <h4>性价比高</h4>
+                            <p>灵活的硬件方案选配（高配/标准/经济型），按需定制，不花冤枉钱。</p>
+                        </div>
+                    </div>
+                    <div class="adv-item">
+                        <div class="ai-icon">🔧</div>
+                        <div>
+                            <h4>售后保障</h4>
+                            <p>7×12小时在线技术支持，日喀则市区2小时上门，设备故障免费更换。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="cta-section" id="contact">
+        <h2>立即打造您的 <span class="highlight">智慧停车场</span></h2>
+        <p>免费上门勘测，提供定制化方案与详细报价</p>
+        <div>
+            <a href="../" class="btn-back">← 返回首页</a>
+            <a href="tel:16689025173" class="btn-contact">📞 166-8902-5173</a>
+        </div>
+    </section>
+
+    <!-- ==================== 页脚 ==================== -->
+    <footer style="margin-top:0;">
+        <p>
+            © 2025 西藏智盈通信息工程有限公司 ｜ 藏ICP备XXXXXXXX号<br>
+            官网：park.cab ｜ 电话：166-8902-5173<br>
+            地址：西藏自治区日喀则市桑珠孜区下科技路吉培社区查嘎热林22号
+        </p>
+    </footer>
+
+    <!-- ==================== JavaScript ==================== -->
+    <script>
+        // 汉堡菜单切换
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        document.querySelectorAll('.nav-links a').forEach(function(a) {
+            a.addEventListener('click', function() {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
