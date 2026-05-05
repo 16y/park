@@ -3,6 +3,7 @@ Thumbs.db
 db.json
 *.log
 node_modules/
-public/
 .deploy*/
 _multiconfig.yml
+
+# 保留 public 目录用于 EdgeOne Pages 部署
