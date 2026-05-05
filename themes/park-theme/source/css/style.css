@@ -259,8 +259,8 @@ img { max-width: 100%; height: auto; }
 /* ==================== 8. 服务卡片 ==================== */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 .service-card {
   background: var(--bg-card);
@@ -287,7 +287,7 @@ img { max-width: 100%; height: auto; }
 .service-card p { color: var(--text-secondary); line-height: 1.7; font-size: 14px; }
 
 /* ==================== 9. 公司信息 ==================== */
-.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.info-grid { display: grid; grid-template-columns: 1.2fr 2fr; gap: 40px; align-items: start; }
 .info-card {
   background: var(--bg-card); border: 1px solid var(--border);
   border-radius: var(--radius-lg); padding: 36px;
@@ -346,7 +346,69 @@ img { max-width: 100%; height: auto; }
 }
 .wechat-hint { font-size: 12px; color: var(--text-muted); }
 
-/* ==================== 12. 页脚 ==================== */
+/* ==================== 12. 文章展示 ==================== */
+.articles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.article-category {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  transition: all 0.3s;
+}
+.article-category:hover { border-color: rgba(255,255,255,0.15); }
+.article-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.article-cat-icon { font-size: 24px; }
+.article-cat-header h3 { font-size: 18px; font-weight: 700; margin: 0; }
+.article-list { display: flex; flex-direction: column; gap: 12px; }
+.article-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  transition: all 0.3s;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.article-item:hover {
+  background: rgba(0,229,255,0.06);
+  transform: translateX(4px);
+}
+.article-date {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  min-width: 42px;
+  text-align: center;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.05);
+}
+.article-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.article-empty {
+  color: var(--text-muted);
+  font-size: 14px;
+  text-align: center;
+  padding: 30px 0;
+}
+
+/* ==================== 13. 页脚 ==================== */
 .site-footer {
   padding: 40px 20px; text-align: center;
   border-top: 1px solid var(--border);
@@ -392,6 +454,12 @@ img { max-width: 100%; height: auto; }
   .logo-text { font-size: 15px; }
   .section { padding: 60px 16px; }
   .info-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .articles-grid { grid-template-columns: 1fr; }
   .scroll-indicator { margin-top: 30px; }
   .hero-dots { bottom: 40px; }
+}
+@media (max-width: 540px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .article-item { flex-direction: column; align-items: flex-start; gap: 6px; }
 }

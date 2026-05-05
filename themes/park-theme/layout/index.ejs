@@ -193,3 +193,51 @@ layout: layout
     </div>
   </div>
 </section>
+
+<!-- ===== 文章展示 ===== -->
+<section id="articles" class="section">
+  <div class="container">
+    <h2 class="section-title reveal">最新 <span class="highlight">动态</span></h2>
+    <p class="section-desc reveal">了解公司最新动态与技术分享</p>
+    <div class="articles-grid">
+      <div class="article-category reveal">
+        <div class="article-cat-header">
+          <span class="article-cat-icon">📰</span>
+          <h3>公司新闻</h3>
+        </div>
+        <div class="article-list">
+          <% var newsPosts = site.posts ? site.posts.sort('-date').filter(function(p){ return p.categories && p.categories.length && p.categories.data && p.categories.data[0] && p.categories.data[0].name === '公告'; }).slice(0, 3) : []; %>
+          <% if (newsPosts.length > 0) { %>
+            <% newsPosts.forEach(function(post) { %>
+              <a href="<%= url_for(post.path) %>" class="article-item">
+                <span class="article-date"><%= date(post.date, 'MM/dd') %></span>
+                <span class="article-title"><%= post.title %></span>
+              </a>
+            <% }); %>
+          <% } else { %>
+            <div class="article-empty">暂无新闻动态</div>
+          <% } %>
+        </div>
+      </div>
+      <div class="article-category reveal">
+        <div class="article-cat-header">
+          <span class="article-cat-icon">💡</span>
+          <h3>技术分享</h3>
+        </div>
+        <div class="article-list">
+          <% var techPosts = site.posts ? site.posts.sort('-date').filter(function(p){ return !p.categories || !p.categories.length || !p.categories.data || !p.categories.data[0] || p.categories.data[0].name !== '公告'; }).slice(0, 3) : []; %>
+          <% if (techPosts.length > 0) { %>
+            <% techPosts.forEach(function(post) { %>
+              <a href="<%= url_for(post.path) %>" class="article-item">
+                <span class="article-date"><%= date(post.date, 'MM/dd') %></span>
+                <span class="article-title"><%= post.title %></span>
+              </a>
+            <% }); %>
+          <% } else { %>
+            <div class="article-empty">暂无技术分享</div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
