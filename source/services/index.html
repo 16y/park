@@ -1,12 +1,10 @@
 ---
-title: 核心服务
 layout: page
+title: 核心服务
 ---
 
 <style>
 /* ===== 核心服务专题页样式 ===== */
-
-/* 页面横幅 */
 .page-banner {
     position: relative;
     height: 50vh;
@@ -43,71 +41,56 @@ layout: page
     max-width: 600px;
     margin: 0 auto;
 }
-
-/* 服务内容 */
 .services-page { padding: 60px 0 80px; }
-
-/* 服务区块 */
 .service-block {
-    margin-bottom: 70px;
+    margin-bottom: 60px;
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 20px;
-    padding: 44px 36px;
+    padding: 40px 32px;
     transition: all 0.3s;
 }
-.service-block:hover {
-    border-color: rgba(0,229,255,0.12);
-    background: rgba(0,229,255,0.03);
-}
-.service-block:last-child { margin-bottom: 0; }
-
+.service-block:hover { border-color: rgba(0,229,255,0.12); }
 .service-block-header {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 .service-block-icon {
-    font-size: 2.5rem;
-    width: 60px;
-    height: 60px;
+    font-size: 2.2rem;
+    width: 56px; height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(0,229,255,0.08);
-    border-radius: 16px;
+    border-radius: 14px;
     flex-shrink: 0;
 }
-.service-block h2 {
-    font-size: 1.6rem;
-    margin: 0;
-}
+.service-block h2 { font-size: 1.5rem; margin: 0; }
 .service-block h2 .highlight { color: var(--accent, #00e5ff); }
-.service-block > p {
+.service-block > .sb-desc {
     color: rgba(255,255,255,0.65);
     line-height: 1.8;
     font-size: 0.95rem;
-    margin: 0 0 24px 76px;
+    margin: 0 0 24px 72px;
 }
-
-/* 服务子项 */
 .service-sub-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-left: 76px;
+    gap: 12px;
+    margin-left: 72px;
 }
 @media (max-width: 640px) {
-    .service-block { padding: 28px 20px; }
-    .service-block > p { margin-left: 0; }
+    .service-block { padding: 24px 18px; }
+    .service-block > .sb-desc { margin-left: 0; }
     .service-sub-grid { margin-left: 0; grid-template-columns: 1fr; }
 }
 .service-sub-item {
     display: flex;
-    gap: 14px;
+    gap: 12px;
     align-items: flex-start;
-    padding: 16px;
+    padding: 14px 16px;
     background: rgba(255,255,255,0.03);
     border-radius: 12px;
     border: 1px solid rgba(255,255,255,0.04);
@@ -117,38 +100,29 @@ layout: page
     background: rgba(0,229,255,0.05);
     border-color: rgba(0,229,255,0.1);
 }
-.service-sub-item .ssi-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
-.service-sub-item h4 { font-size: 1rem; margin: 0 0 4px; }
-.service-sub-item p { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin: 0; line-height: 1.5; }
+.service-sub-item .ssi-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+.service-sub-item h4 { font-size: 0.95rem; margin: 0 0 3px; }
+.service-sub-item p { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin: 0; line-height: 1.5; }
 
-/* 流程展示 */
 .process-flow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 6px 0;
-    margin: 30px 0 0 76px;
-    padding: 20px;
+    display: flex; align-items: center; justify-content: center;
+    flex-wrap: wrap; gap: 6px 0;
+    margin: 24px 0 0 72px;
+    padding: 18px;
     background: rgba(0,229,255,0.03);
     border-radius: 14px;
     border: 1px solid rgba(0,229,255,0.06);
 }
 @media (max-width: 640px) { .process-flow { margin-left: 0; } }
-.process-node {
-    text-align: center;
-    padding: 12px 18px;
-    flex: 1 1 120px;
-}
-.process-node .pn-icon { font-size: 1.4rem; }
-.process-node .pn-label { font-size: 0.82rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
-.process-arrow { color: rgba(0,229,255,0.3); font-size: 1.1rem; padding: 0 4px; flex-shrink: 0; }
+.process-node { text-align: center; padding: 10px 16px; flex: 1 1 110px; }
+.process-node .pn-icon { font-size: 1.3rem; }
+.process-node .pn-label { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-top: 3px; }
+.process-arrow { color: rgba(0,229,255,0.3); font-size: 1rem; flex-shrink: 0; }
 @media (max-width: 700px) {
     .process-flow { flex-direction: column; }
     .process-arrow { transform: rotate(90deg); }
 }
 
-/* CTA */
 .cta-block {
     text-align: center;
     padding: 50px 20px;
@@ -163,24 +137,21 @@ layout: page
     padding: 12px 30px;
     background: linear-gradient(135deg, #00e5ff, #7c4dff);
     border-radius: 8px;
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
     transition: all 0.3s;
     margin: 0 6px;
 }
-.btn-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,229,255,0.2);
-}
+.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,229,255,0.2); }
 .btn-outline {
     display: inline-block;
     padding: 12px 30px;
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 8px;
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     font-size: 0.95rem;
     transition: all 0.3s;
@@ -192,7 +163,6 @@ layout: page
 }
 </style>
 
-<!-- ==================== 页面横幅 ==================== -->
 <div class="page-banner">
     <div class="page-banner-content">
         <h1>核心 <span class="highlight">服务</span></h1>
@@ -200,7 +170,6 @@ layout: page
     </div>
 </div>
 
-<!-- ==================== 服务内容 ==================== -->
 <div class="services-page">
 <div class="container">
 
@@ -210,7 +179,7 @@ layout: page
         <div class="service-block-icon">🅿️</div>
         <h2><span class="highlight">智慧停车场</span> 建设</h2>
     </div>
-    <p>从车牌识别到无感支付，从车位引导到云端管理，提供停车场全流程智能化解决方案。覆盖住宅小区、商业综合体、医院、写字楼等各类场景。</p>
+    <p class="sb-desc">从车牌识别到无感支付，从车位引导到云端管理，提供停车场全流程智能化解决方案。覆盖住宅小区、商业综合体、医院、写字楼等各类场景。</p>
 
     <div class="service-sub-grid">
         <div class="service-sub-item">
@@ -252,31 +221,19 @@ layout: page
             <div class="ssi-icon">🔐</div>
             <div>
                 <h4>安全管控</h4>
-                <p>黑名单布控、一车一杆防跟车、防逆行检测、设备离线告警，数据加密全程追溯</p>
+                <p>黑名单布控、一车一杆防跟车���防逆行检测、设备离线告警，数据加密全程追溯</p>
             </div>
         </div>
     </div>
 
     <div class="process-flow">
-        <div class="process-node">
-            <div class="pn-icon">📷</div>
-            <div class="pn-label">车牌识别相机</div>
-        </div>
+        <div class="process-node"><div class="pn-icon">📷</div><div class="pn-label">车牌识别相机</div></div>
         <div class="process-arrow">→</div>
-        <div class="process-node">
-            <div class="pn-icon">🖥️</div>
-            <div class="pn-label">现场控制终端</div>
-        </div>
+        <div class="process-node"><div class="pn-icon">🖥️</div><div class="pn-label">现场控制终端</div></div>
         <div class="process-arrow">→</div>
-        <div class="process-node">
-            <div class="pn-icon">☁️</div>
-            <div class="pn-label">云端管理平台</div>
-        </div>
+        <div class="process-node"><div class="pn-icon">☁️</div><div class="pn-label">云端管理平台</div></div>
         <div class="process-arrow">→</div>
-        <div class="process-node">
-            <div class="pn-icon">📱</div>
-            <div class="pn-label">车主小程序</div>
-        </div>
+        <div class="process-node"><div class="pn-icon">📱</div><div class="pn-label">车主小程序</div></div>
     </div>
 </div>
 
@@ -286,7 +243,7 @@ layout: page
         <div class="service-block-icon">📹</div>
         <h2><span class="highlight">安防监控</span> 系统</h2>
     </div>
-    <p>高清数字监控、AI智能分析、夜视全彩、远程实时查看。提供监控系统设计、安装、调试、维护一站式服务，全方位守护安全。</p>
+    <p class="sb-desc">高清数字监控、AI智能分析、夜视全彩、远程实时查看。提供监控系统设计、安装、调试、维护一站式服务，全方位守护安全。</p>
 
     <div class="service-sub-grid">
         <div class="service-sub-item">
@@ -340,7 +297,7 @@ layout: page
         <div class="service-block-icon">🔌</div>
         <h2><span class="highlight">信息系统</span> 集成</h2>
     </div>
-    <p>智能控制系统集成、多系统协同、统一平台管理。计算机软硬件销售、网络设备部署、信息系统运行维护，专业7×24技术保障。</p>
+    <p class="sb-desc">智能控制系统集成、多系统协同、统一平台管理。计算机软硬件销售、网络设备部署、信息系统运行维护，专业7×24技术保障。</p>
 
     <div class="service-sub-grid">
         <div class="service-sub-item">
@@ -380,7 +337,7 @@ layout: page
         <div class="service-block-icon">📡</div>
         <h2><span class="highlight">弱电与通讯</span> 工程</h2>
     </div>
-    <p>通讯设备销售安装、综合布线、弱电智能化工程。从设计到施工一站式服务，打造智能、高效、可靠的弱电系统。</p>
+    <p class="sb-desc">通讯设备销售安装、综合布线、弱电智能化工程。从设计到施工一站式服务，打造智能、高效、可靠的弱电系统。</p>
 
     <div class="service-sub-grid">
         <div class="service-sub-item">
@@ -417,7 +374,6 @@ layout: page
 </div>
 </div>
 
-<!-- ==================== CTA ==================== -->
 <div class="cta-block">
     <h2>需要 <span class="highlight">定制方案</span>？</h2>
     <p>免费上门勘测，为您量身打造智能化解决方案</p>
